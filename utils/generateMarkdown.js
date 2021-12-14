@@ -38,8 +38,8 @@ function renderLicenseSection(license) {
 function generateMarkdown(templateData) {
   return `
   # ${templateData.title}
-
-  ${renderLicenseBadge(license)}
+  
+  ${renderLicenseBadge(templateData.license)}
   ## Description
 
   ${templateData.description}
@@ -70,7 +70,7 @@ function generateMarkdown(templateData) {
   ${templateData.contributing}
 
 
-  ${renderLicenseSection(data.license)}
+  ${renderLicenseSection(templateData.license)}
   ## Tests
 
   ${templateData.tests}
@@ -81,7 +81,7 @@ function generateMarkdown(templateData) {
   Find me on GitHub at username ${templateData.username}.
   Also, email me at ${templateData.email}.
   `;
-}
+};
 
 module.exports = generateMarkdown;
 

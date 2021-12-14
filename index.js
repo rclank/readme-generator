@@ -2,6 +2,7 @@
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 const fs = require('fs');
+const path = require('path');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -88,14 +89,9 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    return fs.writeFile(fileName, data, err => {
-        if (err) {
-            console.log("that didn't work");
-            return;
-        }
-    });
-}
+function writeToFile(fileContent) {
+    fs.writeFileSync(path.join(__dirname, './dist/README.md'), fileContent);
+};
 
 // TODO: Create a function to initialize app
 function init() {
@@ -105,15 +101,19 @@ function init() {
 // Function call to initialize app
 // start by getting user input in cli via inquirer
 init()
-    .then(answers => console.log(answers));
+    // .then(answers => console.log(answers));
     // pass user input to generate markdown
+    .then(userInput => {
         // return constructed markdown as one giant string
+        return generateMarkdown(userInput);
+    })
     // pass giant markdown string as input to write to a file
+    .then(markdownStr => {
         // use fs.writeFile() to write a file with full markdown we just generated
+        writeToFile(markdownStr);
         // return success message upon success
+    })
     // catch any errors in above promise chain
-        // log errors caught
-
-    // .then(answers => writeToFile('README.md', generateMarkdown(answers)));
-
-    // https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>
+    .catch(err => {
+        console.log(err);
+    });
