@@ -1,19 +1,6 @@
 
   # e
 
-
-
-
-
-
-
-
-
-
-
-  
-  
-  ![license badge](https://img.shields.io/badge/license-MIT-green)
   
   ## Description
 
@@ -46,12 +33,6 @@
 
 
   
-  ## License
-
-  See above badge for license info.
-
-
-  
   ## Tests
 
   e
@@ -59,6 +40,6 @@
 
   ## Questions
 
-  Find me on GitHub at username e.
+  Find me on GitHub at username e.<br>
   Also, email me at e.
   

@@ -38,7 +38,7 @@ function renderLicenseSection(license) {
 function generateMarkdown(templateData) {
   return `
   # ${templateData.title}
-  
+
   ${renderLicenseBadge(templateData.license)}
   ## Description
 
@@ -78,12 +78,9 @@ function generateMarkdown(templateData) {
 
   ## Questions
 
-  Find me on GitHub at username ${templateData.username}.
+  Find me on GitHub at username ${templateData.username}.<br>
   Also, email me at ${templateData.email}.
   `;
 };
 
 module.exports = generateMarkdown;
-
-// ![NPM](https://img.shields.io/npm/l/inquirer)
-// https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>

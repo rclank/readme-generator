@@ -52,19 +52,43 @@ const questions = [
         // project description
         type: 'input',
         name: 'description',
-        message: 'Please enter a description for your project'
+        message: 'Please enter a description for your project (Required)',
+        validate: descriptionInput => {
+            if (descriptionInput) {
+                return true;
+            } else {
+                console.log('Please enter a project description!');
+                return false;
+            }
+        }
     },
     {
         // installation instructions
         type: 'input',
         name: 'installation',
-        message: 'Please provide installation instructions for your project'
+        message: 'Please provide installation instructions for your project (Required)',
+        validate: installInput => {
+            if (installInput) {
+                return true;
+            } else {
+                console.log('Please enter installation instructions!');
+                return false;
+            }
+        }
     },
     {
         // usage info
         type: 'input',
         name: 'usage',
-        message: 'Please provide usage information for your project'
+        message: 'Please provide usage information for your project (Required)',
+        validate: usageInput => {
+            if (usageInput) {
+                return true;
+            } else {
+                console.log('Please enter usage info!');
+                return false;
+            }
+        }
     },
     {
         // license
@@ -78,13 +102,29 @@ const questions = [
         // contributing guidelines
         type: 'input',
         name: 'contributing',
-        message: 'Please provide contribution guidelines for your project'
+        message: 'Please provide contribution guidelines for your project (Required)',
+        validate: titleInput => {
+            if (titleInput) {
+                return true;
+            } else {
+                console.log('Please enter contribution guidelines for your project!');
+                return false;
+            }
+        }
     },
     {
         // tests
         type: 'input',
         name: 'tests',
-        message: 'Please provide testing instructions for your project'
+        message: 'Please provide testing instructions for your project (Required)',
+        validate: titleInput => {
+            if (titleInput) {
+                return true;
+            } else {
+                console.log('Please enter a project title!');
+                return false;
+            }
+        }
     }
 ];
 
